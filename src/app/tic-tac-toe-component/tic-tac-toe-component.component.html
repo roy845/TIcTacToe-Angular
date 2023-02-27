@@ -1,0 +1,22 @@
+<div class = "title-container">
+    <h1>TicTacToe</h1>
+</div>
+
+
+
+<div class="board">
+    <div class="cell" *ngFor="let row of [0, 1, 2]">
+      <div *ngFor="let col of [0, 1, 2]">
+        <app-square
+          [value]="cells[row * 3 + col]"
+          (click)="selectCell(row * 3 + col)">
+        </app-square>
+      </div>
+    </div>
+  </div>
+
+<div *ngIf = "message" class = "message">{{message}}</div>
+
+<div class="reset-button-container">
+    <button class="reset-button" (click)="resetGame()">Reset Game</button>
+</div>
